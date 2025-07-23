@@ -24,6 +24,8 @@ window.onload = function() {
     light_theme_switch();
     dark_theme_switch();
 
+    localStorage.setItem('theme', "dark");
+
     set_theme();
 
     init_clear_cache_button();
@@ -84,6 +86,7 @@ function render_items(){
                 if (item.done === true){
                     checkbox.style.backgroundColor = "rgb(48, 45, 45)";
                     checkmark.style.backgroundColor = "black";
+                    checkbox.disabled = true;
                 }
 
                 const input = document.createElement("input");
@@ -147,6 +150,7 @@ function render_items(){
                 const checkbox = document.createElement("input");
                 checkbox.type = "checkbox";
                 checkbox.style.backgroundColor = "rgb(48, 45, 45)";
+                checkbox.disabled = true;
                 
                 const checkmark = document.createElement("span");
                 checkmark.className = "checkmark";
